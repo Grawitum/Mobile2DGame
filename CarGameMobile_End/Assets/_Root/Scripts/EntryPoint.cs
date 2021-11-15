@@ -1,4 +1,7 @@
 using Profile;
+using Services.Ads.UnityAds;
+using Services.Analytics;
+using Services.IAP;
 using UnityEngine;
 
 internal class EntryPoint : MonoBehaviour
@@ -8,13 +11,9 @@ internal class EntryPoint : MonoBehaviour
 
 
     [SerializeField] private Transform _placeForUi;
-    //enum CarModel
-    //{
-    //    Car,
-    //    Boat
-    //}
-    //[SerializeField] private CarModel _carModel = CarModel.Car;
-    //[SerializeField] private EnumCar.CarModel _carModel = EnumCar.CarModel.Car;
+    [SerializeField] private UnityAdsService _adsService;
+    [SerializeField] private AnalyticsManager _analyticsManager;
+    [SerializeField] private IAPService _iapService;
 
     [SerializeField] private SelectCar _carModel = SelectCar.Car;
     [SerializeField] private SelectInputController _inputController = SelectInputController.Acceleration;
@@ -25,11 +24,21 @@ internal class EntryPoint : MonoBehaviour
     private void Awake()
     {
         var profilePlayer = new ProfilePlayer(SpeedCar, InitialState);
-        _mainController = new MainController(_placeForUi, profilePlayer,_carModel,_inputController);
+        _mainController = new MainController(_placeForUi, profilePlayer, _carModel, _inputController);
+
+        _iapService.Initialized.AddListener(OnIapInitialized);
+        _adsService.Initialized.AddListener(_adsService.InterstitialPlayer.Play);
+        _analyticsManager.SendMainMenuOpened();
     }
 
     private void OnDestroy()
     {
+        _iapService.Initialized.RemoveListener(OnIapInitialized);
+        _adsService.Initialized.RemoveListener(OnAdsInitialized);
         _mainController.Dispose();
     }
+
+    private void OnIapInitialized() => _iapService.Buy("product_1");
+    private void OnAdsInitialized() => _adsService.InterstitialPlayer.Play();
+
 }
