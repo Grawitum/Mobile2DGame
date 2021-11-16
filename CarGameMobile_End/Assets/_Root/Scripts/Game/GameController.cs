@@ -4,6 +4,7 @@ using Game.InputLogic;
 using Game.TapeBackground;
 using Profile;
 using Tool;
+using Services.Analytics;
 
 namespace Game
 {
@@ -11,6 +12,8 @@ namespace Game
     {
         public GameController(ProfilePlayer profilePlayer, SelectCar carModel,SelectInputController inputController)
         {
+            profilePlayer.ServicesSingleton.GetAnalyticsManager().SendGameStarted();
+
             var leftMoveDiff = new SubscriptionProperty<float>();
             var rightMoveDiff = new SubscriptionProperty<float>();
 

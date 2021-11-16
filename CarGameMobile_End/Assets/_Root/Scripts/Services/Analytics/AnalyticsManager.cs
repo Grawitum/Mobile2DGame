@@ -25,8 +25,12 @@ namespace Services.Analytics
         public void SendMainMenuOpened() =>
             SendEvent("MainMenuOpened");
 
+        public void SendGameStarted() =>
+            SendEvent("GameStarted");
+
         private void SendEvent(string eventName)
         {
+            Debug.Log(eventName);
             for (int i = 0; i < _services.Length; i++)
                 _services[i].SendEvent(eventName);
         }
