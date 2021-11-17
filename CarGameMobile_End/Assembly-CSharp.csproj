@@ -89,6 +89,7 @@
     <Compile Include="Assets\_Root\Scripts\BaseController.cs" />
     <Compile Include="Assets\_Root\Scripts\Game\Car\CarView.cs" />
     <Compile Include="Assets\_Root\Scripts\Game\InputLogic\GyroscopeInputView.cs" />
+    <Compile Include="Assets\_Root\Scripts\Services\ServicesSingleton.cs" />
     <Compile Include="Assets\_Root\Scripts\Game\InputLogic\FloatInputJoystick.cs" />
     <Compile Include="Assets\_Root\Scripts\Services\Ads\UnityAds\Settings\UnityAdsSettings.cs" />
     <Compile Include="Assets\_Root\Scripts\Services\IAP\Settings\ProductLibrary.cs" />
@@ -110,7 +111,6 @@
     <Compile Include="Assets\UpdateManager\Scripts\Utility\Singleton.cs" />
     <Compile Include="Assets\_Root\Scripts\Game\InputLogic\AxisManager.cs" />
     <Compile Include="Assets\_Root\Scripts\Services\IAP\PurchaseRestorer.cs" />
-    <Compile Include="Assets\_Root\Scripts\Services\ServicesSingleton.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\UpdateManager\READ ME.txt" />

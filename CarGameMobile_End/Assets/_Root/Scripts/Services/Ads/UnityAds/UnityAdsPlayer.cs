@@ -14,10 +14,8 @@ namespace Services.Ads.UnityAds
 
         protected readonly string _id;
 
-
         protected UnityAdsPlayer(string id) =>
             _id = id;
-
 
         public void Play()
         {
@@ -28,7 +26,6 @@ namespace Services.Ads.UnityAds
 
         protected abstract void OnPlaying();
         protected abstract void Load();
-
 
         public void OnUnityAdsReady(string placementId)
         {

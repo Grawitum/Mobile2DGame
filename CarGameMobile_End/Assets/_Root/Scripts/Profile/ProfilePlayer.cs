@@ -10,7 +10,6 @@ namespace Profile
         public readonly CarModel CurrentCar;
         public readonly ServicesSingleton ServicesSingleton;
 
-
         public ProfilePlayer(float speedCar, GameState initialState,ServicesSingleton servicesSingleton) : this(speedCar)
         {
             CurrentState.Value = initialState;

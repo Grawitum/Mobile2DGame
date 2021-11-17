@@ -3,7 +3,6 @@ using Tool;
 
 namespace Game.Boat
 {
-
     internal class BoatController : BaseController
     {
         private readonly ResourcePath _viewPath = new ResourcePath("Prefabs/Boat");

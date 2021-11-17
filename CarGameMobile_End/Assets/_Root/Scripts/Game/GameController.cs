@@ -26,8 +26,7 @@ namespace Game
             {
                 case SelectCar.Car:
                     var carController = new CarController();
-                    AddController(carController);
-                    
+                    AddController(carController);                    
                     break;
                 case SelectCar.Boat:
                     var boarController = new BoatController();

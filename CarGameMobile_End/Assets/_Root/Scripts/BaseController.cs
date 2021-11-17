@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-
 using Object = UnityEngine.Object;
 
 internal abstract class BaseController : IDisposable
@@ -9,7 +8,6 @@ internal abstract class BaseController : IDisposable
     private List<BaseController> _baseControllers;
     private List<GameObject> _gameObjects;
     private bool _isDisposed;
-
 
     public void Dispose()
     {
@@ -20,7 +18,6 @@ internal abstract class BaseController : IDisposable
 
         DisposeBaseControllers();
         DisposeGameObjects();
-
         OnDispose();
     }
 
@@ -47,7 +44,6 @@ internal abstract class BaseController : IDisposable
     }
 
     protected virtual void OnDispose() { }
-
 
     protected void AddController(BaseController baseController)
     {

@@ -465,5 +465,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _placeForUi: {fileID: 1903552}
   _servicesSingleton: {fileID: 29017016}
-  _carModel: 1
-  _inputController: 0
+  _carType: 0
+  _inputController: 1

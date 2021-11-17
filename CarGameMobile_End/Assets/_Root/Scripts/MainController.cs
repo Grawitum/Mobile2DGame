@@ -11,17 +11,16 @@ internal class MainController : BaseController
     private MainMenuController _mainMenuController;
     private SettingsMenuController _settingsMenuController;
     private GameController _gameController;
-    private SelectCar _carModel;
     private SelectInputController _inputController;
 
+    private SelectCar _carType;
 
-    public MainController(Transform placeForUi, ProfilePlayer profilePlayer, SelectCar carModel, SelectInputController inputController)
+    public MainController(Transform placeForUi, ProfilePlayer profilePlayer, SelectCar carType, SelectInputController inputController)
     {
         _placeForUi = placeForUi;
         _profilePlayer = profilePlayer;
-        _carModel = carModel;
+        _carType = carType;
         _inputController = inputController;
-
 
         profilePlayer.CurrentState.SubscribeOnChange(OnChangeGameState);
         OnChangeGameState(_profilePlayer.CurrentState.Value);
@@ -31,10 +30,9 @@ internal class MainController : BaseController
     {
         _mainMenuController?.Dispose();
         _gameController?.Dispose();
-
+        _settingsMenuController?.Dispose();
         _profilePlayer.CurrentState.UnSubscribeOnChange(OnChangeGameState);
     }
-
 
     private void OnChangeGameState(GameState state)
     {
@@ -46,8 +44,9 @@ internal class MainController : BaseController
                 _settingsMenuController?.Dispose();
                 break;
             case GameState.Game:
-                _gameController = new GameController(_profilePlayer,_carModel,_inputController);
+                _gameController = new GameController(_profilePlayer,_carType,_inputController);
                 _mainMenuController?.Dispose();
+                _settingsMenuController?.Dispose();
                 break;
             case GameState.Settings:
                 _settingsMenuController = new SettingsMenuController(_placeForUi, _profilePlayer);
@@ -56,6 +55,7 @@ internal class MainController : BaseController
             default:
                 _mainMenuController?.Dispose();
                 _gameController?.Dispose();
+                _settingsMenuController?.Dispose();
                 break;
         }
     }

@@ -10,7 +10,6 @@ namespace Game.InputLogic
         private readonly ResourcePath _resourcePath;
         private BaseInputView _view;
 
-
         public InputGameController(
             SubscriptionProperty<float> leftMove,
             SubscriptionProperty<float> rightMove,
