@@ -9,5 +9,7 @@ namespace Services.IAP
     {
         [field: SerializeField] public string Id { get; private set; }
         [field: SerializeField] public ProductType ProductType { get; private set; }
+        [field: SerializeField] public short Amount { get; private set; }
+        [field: SerializeField] public string currency { get; private set; }
     }
 }

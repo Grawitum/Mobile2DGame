@@ -22,6 +22,7 @@ internal class MainController : BaseController
         _carModel = carModel;
         _inputController = inputController;
 
+
         profilePlayer.CurrentState.SubscribeOnChange(OnChangeGameState);
         OnChangeGameState(_profilePlayer.CurrentState.Value);
     }

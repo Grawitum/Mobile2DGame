@@ -4,7 +4,6 @@ using Game.InputLogic;
 using Game.TapeBackground;
 using Profile;
 using Tool;
-using Services.Analytics;
 
 namespace Game
 {
@@ -19,15 +18,10 @@ namespace Game
 
             var tapeBackgroundController = new TapeBackgroundController(leftMoveDiff, rightMoveDiff);
             AddController(tapeBackgroundController);
-
-            
+           
             var inputGameKeyController = new InputGameController(leftMoveDiff, rightMoveDiff, profilePlayer.CurrentCar,inputController);
             AddController(inputGameKeyController);
                 
-
-            //var inputGameController = new InputGameController(leftMoveDiff, rightMoveDiff, profilePlayer.CurrentCar);
-            //AddController(inputGameController);
-
             switch (carModel)
             {
                 case SelectCar.Car:
@@ -42,8 +36,6 @@ namespace Game
                 default:
                     break;
             }
-            //var carController = new CarController();
-            //AddController(carController);
         }
     }
 }

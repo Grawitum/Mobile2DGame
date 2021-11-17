@@ -16,7 +16,8 @@ namespace Ui
         {
             _profilePlayer = profilePlayer;
             _view = LoadView(placeForUi);
-            _view.Init(StartGame,ActiveSettingsMenu);
+            _view.Init(StartGame,ActiveSettingsMenu, OnIapInitialized, OnAdsInitialized);
+            _profilePlayer.ServicesSingleton.GetAnalyticsManager().SendMainMenuOpened();
         }
 
         private MainMenuView LoadView(Transform placeForUi)
@@ -33,5 +34,11 @@ namespace Ui
 
         private void ActiveSettingsMenu() =>
             _profilePlayer.CurrentState.Value = GameState.Settings;
+
+        private void OnAdsInitialized() => 
+            _profilePlayer.ServicesSingleton.GetUnityAdsService().RewardedPlayer.Play();
+
+        private void OnIapInitialized() =>
+            _profilePlayer.ServicesSingleton.GetIAPService().Buy("2");
     }
 }

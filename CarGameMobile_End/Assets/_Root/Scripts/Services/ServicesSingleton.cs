@@ -1,7 +1,6 @@
 using Services.Ads.UnityAds;
 using Services.Analytics;
 using Services.IAP;
-using System.Collections;
 using System.Collections.Generic;
 using Tool;
 using UnityEngine;
@@ -44,6 +43,7 @@ namespace Services
             if (_iapService == null)
             {
                 _iapService = CreateServices(_viewIAPPath).GetComponent<IAPService>();
+                _iapService.analyticsManager = GetAnalyticsManager();
             }
             return _iapService;
         }
