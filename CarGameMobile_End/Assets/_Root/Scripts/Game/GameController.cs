@@ -1,84 +1,46 @@
-using Tool;
-using System;
-using Profile;
-using UnityEngine;
+using Game.Car;
+using Game.Boat;
 using Game.InputLogic;
 using Game.TapeBackground;
-using Game.Transport;
-using Game.Transport.Boat;
-using Game.Transport.Car;
-using Features.AbilitySystem;
+using Profile;
+using Tool;
 
 namespace Game
 {
     internal class GameController : BaseController
     {
-        private readonly ProfilePlayer _profilePlayer;
-        private readonly SubscriptionProperty<float> _leftMoveDiff;
-        private readonly SubscriptionProperty<float> _rightMoveDiff;
-
-        private readonly TapeBackgroundController _tapeBackgroundController;
-        private readonly InputGameController _inputGameController;
-        private readonly TransportController _transportController;
-        private readonly AbilitiesController _abilitiesController;
-
-
-        public GameController(Transform placeForUi, ProfilePlayer profilePlayer)
+        public GameController(ProfilePlayer profilePlayer, SelectCar carModel,SelectInputController inputController)
         {
-            _profilePlayer = profilePlayer;
-            _leftMoveDiff = new SubscriptionProperty<float>();
-            _rightMoveDiff = new SubscriptionProperty<float>();
+            var leftMoveDiff = new SubscriptionProperty<float>();
+            var rightMoveDiff = new SubscriptionProperty<float>();
 
-            _tapeBackgroundController = CreateTapeBackground();
-            _inputGameController = CreateInputGameController();
-            _transportController = CreateTransportController();
-            _abilitiesController = CreateAbilitiesController(placeForUi);
-        }
-
-
-        private TapeBackgroundController CreateTapeBackground()
-        {
-            var tapeBackgroundController = new TapeBackgroundController(_leftMoveDiff, _rightMoveDiff);
+            var tapeBackgroundController = new TapeBackgroundController(leftMoveDiff, rightMoveDiff);
             AddController(tapeBackgroundController);
 
-            return tapeBackgroundController;
-        }
+            
+            var inputGameKeyController = new InputGameController(leftMoveDiff, rightMoveDiff, profilePlayer.CurrentCar,inputController);
+            AddController(inputGameKeyController);
+                
 
-        private InputGameController CreateInputGameController()
-        {
-            var inputGameController = new InputGameController(_leftMoveDiff, _rightMoveDiff, _profilePlayer.CurrentTransport);
-            AddController(inputGameController);
+            //var inputGameController = new InputGameController(leftMoveDiff, rightMoveDiff, profilePlayer.CurrentCar);
+            //AddController(inputGameController);
 
-            return inputGameController;
-        }
-
-        private TransportController CreateTransportController()
-        {
-            TransportController transportController;
-
-            switch (_profilePlayer.CurrentTransport.Type)
+            switch (carModel)
             {
-                case TransportType.Car:
-                    transportController = new CarController();
+                case SelectCar.Car:
+                    var carController = new CarController();
+                    AddController(carController);
+                    
                     break;
-                case TransportType.Boat:
-                    transportController = new BoatController();
+                case SelectCar.Boat:
+                    var boarController = new BoatController();
+                    AddController(boarController);
                     break;
                 default:
-                    throw new ArgumentException(nameof(TransportType));
+                    break;
             }
-
-            AddController(transportController);
-
-            return transportController;
-        }
-
-        private AbilitiesController CreateAbilitiesController(Transform placeForUi)
-        {
-            var abilitiesController = new AbilitiesController(placeForUi, _transportController);
-            AddController(abilitiesController);
-
-            return abilitiesController;
+            //var carController = new CarController();
+            //AddController(carController);
         }
     }
 }
