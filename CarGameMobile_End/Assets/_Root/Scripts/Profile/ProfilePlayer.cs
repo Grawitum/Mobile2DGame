@@ -1,22 +1,25 @@
+using Game.Car;
+using Services;
 using Tool;
-using Game;
-using Game.Transport;
-using Features.Inventory;
 
 namespace Profile
 {
     internal class ProfilePlayer
     {
         public readonly SubscriptionProperty<GameState> CurrentState;
-        public readonly TransportModel CurrentTransport;
-        public readonly InventoryModel Inventory;
+        public readonly CarModel CurrentCar;
+        public readonly ServicesSingleton ServicesSingleton;
 
-
-        public ProfilePlayer(float transportSpeed, TransportType transportType, GameState initialState)
+        public ProfilePlayer(float speedCar, GameState initialState,ServicesSingleton servicesSingleton) : this(speedCar)
         {
-            CurrentState = new SubscriptionProperty<GameState>(initialState);
-            CurrentTransport = new TransportModel(transportSpeed, transportType);
-            Inventory = new InventoryModel();
+            CurrentState.Value = initialState;
+            ServicesSingleton = servicesSingleton;
+        }
+
+        public ProfilePlayer(float speedCar)
+        {
+            CurrentState = new SubscriptionProperty<GameState>();
+            CurrentCar = new CarModel(speedCar);
         }
     }
 }
