@@ -5,20 +5,28 @@ namespace Game.Transport
     internal class TransportModel : IUpgradable
     {
         private readonly float _defaultSpeed;
+        private readonly float _defaultJumpHeight;
 
         public readonly TransportType Type;
 
         public float Speed { get; set; }
 
+        public float JumpHeight { get; set; }
 
-        public TransportModel(float speed, TransportType type)
+        public TransportModel(TransportType type,TransportConfig transportConfig)
         {
-            _defaultSpeed = speed;
-            Speed = speed;
+            _defaultSpeed = transportConfig.Speed;
+            Speed = transportConfig.Speed;
+            _defaultJumpHeight = transportConfig.JumpHeight;
+             JumpHeight = transportConfig.JumpHeight;
+
             Type = type;
         }
 
-        public void Restore() =>
+        public void Restore()
+        {
             Speed = _defaultSpeed;
+            JumpHeight = _defaultJumpHeight;
+        }       
     }
 }
