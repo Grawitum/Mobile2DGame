@@ -9,6 +9,7 @@ namespace Game.InputLogic
         private SubscriptionProperty<float> _rightMove;
         protected float _speed;
 
+
         public virtual void Init(
             SubscriptionProperty<float> leftMove,
             SubscriptionProperty<float> rightMove,

@@ -44,9 +44,7 @@ namespace Services.Ads.UnityAds
                 : (IAdsPlayer)new EmptyPlayer("");
 
         private IAdsPlayer CreateRewarded() =>
-            _settings.Rewarded.Enabled
-                ? new InterstitialPlayer(_settings.Rewarded.Id)
-                : (IAdsPlayer)new EmptyPlayer("");
+            new EmptyPlayer("");
 
         private IAdsPlayer CreateBanner() =>
             new EmptyPlayer("");

@@ -13,6 +13,7 @@ namespace Game.TapeBackground
 
         private TapeBackgroundView _view;
 
+
         public TapeBackgroundController(
             SubscriptionProperty<float> leftMove,
             SubscriptionProperty<float> rightMove)
@@ -34,6 +35,7 @@ namespace Game.TapeBackground
             _leftMove.UnSubscribeOnChange(MoveLeft);
             _rightMove.UnSubscribeOnChange(MoveRight);
         }
+
 
         private TapeBackgroundView LoadView()
         {
