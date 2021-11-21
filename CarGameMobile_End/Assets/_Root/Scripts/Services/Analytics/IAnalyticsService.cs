@@ -6,6 +6,5 @@ namespace Services.Analytics
     {
         void SendEvent(string eventName);
         void SendEvent(string eventName, Dictionary<string, object> eventData);
-        void SendTransactionEvent(string productID, decimal amount, string currency);
     }
 }

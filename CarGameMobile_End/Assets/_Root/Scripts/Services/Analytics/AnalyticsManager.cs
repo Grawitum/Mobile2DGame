@@ -22,27 +22,10 @@ namespace Services.Analytics
         }
 
 
-        public void SendMainMenuOpened() =>
-            SendEvent("MainMenuOpened");
-
-        public void SendGameStarted() =>
-            SendEvent("GameStarted");
-
-        public void SendAnalyticsTransaction(string productID, decimal amount, string currency) =>
-            SendTransactionEvent(productID, amount, currency);
-
         private void SendEvent(string eventName)
         {
-            Debug.Log(eventName);
             for (int i = 0; i < _services.Length; i++)
                 _services[i].SendEvent(eventName);
-        }
-
-        private void SendTransactionEvent(string productID, decimal amount, string currency)
-        {
-            Debug.Log(productID  + currency);
-            for (int i = 0; i < _services.Length; i++)
-                _services[i].SendTransactionEvent(productID, amount, currency);
         }
     }
 }

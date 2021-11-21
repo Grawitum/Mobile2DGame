@@ -43,7 +43,7 @@ namespace Services
             if (_iapService == null)
             {
                 _iapService = CreateServices(_viewIAPPath).GetComponent<IAPService>();
-                _iapService.analyticsManager = GetAnalyticsManager();
+                //_iapService.analyticsManager = GetAnalyticsManager();
             }
             return _iapService;
         }

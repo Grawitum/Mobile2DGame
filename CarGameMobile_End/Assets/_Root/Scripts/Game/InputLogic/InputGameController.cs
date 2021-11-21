@@ -1,36 +1,22 @@
-using Game.Car;
+using Game.Transport;
 using Tool;
 using UnityEngine;
-using Profile;
 
 namespace Game.InputLogic
 {
     internal class InputGameController : BaseController
     {
-        private readonly ResourcePath _resourcePath;
+        private readonly ResourcePath _resourcePath = new ResourcePath("Prefabs/Input/KeyboardMove");
         private BaseInputView _view;
+
 
         public InputGameController(
             SubscriptionProperty<float> leftMove,
             SubscriptionProperty<float> rightMove,
-            CarModel car,
-            SelectInputController inputController
-            )
+            TransportModel transportModel)
         {
-            Debug.Log(inputController);
-            switch (inputController)
-            {
-                case SelectInputController.Acceleration:
-                    _resourcePath = new ResourcePath("Prefabs/EndlessMove");
-                    break;
-                case SelectInputController.Key:
-                    _resourcePath = new ResourcePath("Prefabs/KeyboardMove");
-                    break;
-                default:
-                    break;
-            }
             _view = LoadView();
-            _view.Init(leftMove, rightMove, car.Speed);
+            _view.Init(leftMove, rightMove, transportModel.Speed);
         }
 
         private BaseInputView LoadView()

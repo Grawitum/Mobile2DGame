@@ -18,11 +18,13 @@ namespace Game.InputLogic
 
         private bool _usingJoystick;
 
+
         private void Start() =>
             UpdateManager.SubscribeToUpdate(Move);
 
         private void OnDestroy() =>
             UpdateManager.UnsubscribeFromUpdate(Move);
+
 
         public void OnPointerDown(PointerEventData eventData)
         {

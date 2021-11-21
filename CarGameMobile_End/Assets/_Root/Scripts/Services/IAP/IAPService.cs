@@ -1,4 +1,3 @@
-using Services.Analytics;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Purchasing;
@@ -14,8 +13,6 @@ namespace Services.IAP
         [field: SerializeField] public UnityEvent Initialized { get; private set; }
         [field: SerializeField] public UnityEvent PurchaseSucceed { get; private set; }
         [field: SerializeField] public UnityEvent PurchaseFailed { get; private set; }
-
-        public AnalyticsManager analyticsManager;
 
         private bool _isInitialized;
         private IStoreController _controller;
@@ -65,9 +62,8 @@ namespace Services.IAP
                 Error($"Buy {id} FAIL. Not initialized.");
                 return;
             }
-            foreach (Product product in productLibrary.Products)
-                if (product.Id == id) analyticsManager.SendAnalyticsTransaction(product.Id, product.Amount, product.currency);
-                _controller.InitiatePurchase(id);
+
+            _controller.InitiatePurchase(id);
         }
 
         public PurchaseProcessingResult ProcessPurchase(PurchaseEventArgs args)
