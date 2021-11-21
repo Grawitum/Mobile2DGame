@@ -1,46 +1,84 @@
-using Game.Car;
-using Game.Boat;
+using Tool;
+using System;
+using Profile;
+using UnityEngine;
 using Game.InputLogic;
 using Game.TapeBackground;
-using Profile;
-using Tool;
+using Game.Transport;
+using Game.Transport.Boat;
+using Game.Transport.Car;
+using Features.AbilitySystem;
 
 namespace Game
 {
     internal class GameController : BaseController
     {
-        public GameController(ProfilePlayer profilePlayer, SelectCar carModel,SelectInputController inputController)
-        {
-            var leftMoveDiff = new SubscriptionProperty<float>();
-            var rightMoveDiff = new SubscriptionProperty<float>();
+        private readonly ProfilePlayer _profilePlayer;
+        private readonly SubscriptionProperty<float> _leftMoveDiff;
+        private readonly SubscriptionProperty<float> _rightMoveDiff;
 
-            var tapeBackgroundController = new TapeBackgroundController(leftMoveDiff, rightMoveDiff);
+        private readonly TapeBackgroundController _tapeBackgroundController;
+        private readonly InputGameController _inputGameController;
+        private readonly TransportController _transportController;
+        private readonly AbilitiesController _abilitiesController;
+
+
+        public GameController(Transform placeForUi, ProfilePlayer profilePlayer)
+        {
+            _profilePlayer = profilePlayer;
+            _leftMoveDiff = new SubscriptionProperty<float>();
+            _rightMoveDiff = new SubscriptionProperty<float>();
+
+            _tapeBackgroundController = CreateTapeBackground();
+            _inputGameController = CreateInputGameController();
+            _transportController = CreateTransportController();
+            _abilitiesController = CreateAbilitiesController(placeForUi);
+        }
+
+
+        private TapeBackgroundController CreateTapeBackground()
+        {
+            var tapeBackgroundController = new TapeBackgroundController(_leftMoveDiff, _rightMoveDiff);
             AddController(tapeBackgroundController);
 
-            
-            var inputGameKeyController = new InputGameController(leftMoveDiff, rightMoveDiff, profilePlayer.CurrentCar,inputController);
-            AddController(inputGameKeyController);
-                
+            return tapeBackgroundController;
+        }
 
-            //var inputGameController = new InputGameController(leftMoveDiff, rightMoveDiff, profilePlayer.CurrentCar);
-            //AddController(inputGameController);
+        private InputGameController CreateInputGameController()
+        {
+            var inputGameController = new InputGameController(_leftMoveDiff, _rightMoveDiff, _profilePlayer.CurrentTransport);
+            AddController(inputGameController);
 
-            switch (carModel)
+            return inputGameController;
+        }
+
+        private TransportController CreateTransportController()
+        {
+            TransportController transportController;
+
+            switch (_profilePlayer.CurrentTransport.Type)
             {
-                case SelectCar.Car:
-                    var carController = new CarController();
-                    AddController(carController);
-                    
+                case TransportType.Car:
+                    transportController = new CarController();
                     break;
-                case SelectCar.Boat:
-                    var boarController = new BoatController();
-                    AddController(boarController);
+                case TransportType.Boat:
+                    transportController = new BoatController();
                     break;
                 default:
-                    break;
+                    throw new ArgumentException(nameof(TransportType));
             }
-            //var carController = new CarController();
-            //AddController(carController);
+
+            AddController(transportController);
+
+            return transportController;
+        }
+
+        private AbilitiesController CreateAbilitiesController(Transform placeForUi)
+        {
+            var abilitiesController = new AbilitiesController(placeForUi, _transportController);
+            AddController(abilitiesController);
+
+            return abilitiesController;
         }
     }
 }
