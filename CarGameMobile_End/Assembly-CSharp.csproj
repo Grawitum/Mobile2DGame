@@ -59,6 +59,7 @@
     <Compile Include="Assets\_Root\Scripts\Services\IAP\PurchaseRestorer.cs" />
     <Compile Include="Assets\_Root\Scripts\Repository.cs" />
     <Compile Include="Assets\_Root\Scripts\Features\AbilitySystem\Abilities\AbilityItemConfigDataSource.cs" />
+    <Compile Include="Assets\_Root\Scripts\Game\Transport\TransportConfig.cs" />
     <Compile Include="Assets\_Root\Scripts\Features\AbilitySystem\Abilities\AbilityType.cs" />
     <Compile Include="Assets\_Root\Scripts\Services\Analytics\AnalyticsManager.cs" />
     <Compile Include="Assets\_Root\Scripts\Ui\MainMenu\MainMenuController.cs" />
@@ -97,6 +98,7 @@
     <Compile Include="Assets\UpdateManager\Scripts\OverridableMonoBehaviour.cs" />
     <Compile Include="Assets\_Root\Scripts\Features\Shed\Upgrade\UpgradeHandlersRepository.cs" />
     <Compile Include="Assets\_Root\Scripts\Features\Shed\Upgrade\UpgradeItemConfigDataSource.cs" />
+    <Compile Include="Assets\_Root\Scripts\Features\Shed\Upgrade\JumpHeightUpgradeHandler.cs" />
     <Compile Include="Assets\_Root\Scripts\Features\Shed\Upgrade\SpeedUpgradeHandler.cs" />
     <Compile Include="Assets\_Root\Scripts\Game\InputLogic\InputAcceleration.cs" />
     <Compile Include="Assets\_Root\Scripts\Profile\SelectCar.cs" />
@@ -150,8 +152,7 @@
     <Compile Include="Assets\UpdateManager\Scripts\Utility\Singleton.cs" />
     <Compile Include="Assets\_Root\Scripts\Game\InputLogic\AxisManager.cs" />
     <Compile Include="Assets\_Root\Scripts\Ui\SettingsMenu\SettingsMenuController.cs" />
-    <Compile Include="Assets\_Root\Scripts\Game\Transport\TransportConfig.cs" />
-    <Compile Include="Assets\_Root\Scripts\Features\Shed\Upgrade\JumpHeightUpgradeHandler.cs" />
+    <Compile Include="Assets\_Root\Scripts\Features\AbilitySystem\Abilities\JumpAbility.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
