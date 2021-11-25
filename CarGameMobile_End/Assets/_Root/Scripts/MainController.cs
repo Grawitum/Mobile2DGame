@@ -3,6 +3,9 @@ using Game;
 using Profile;
 using UnityEngine;
 using Features.Shed;
+using Features.Shed.Upgrade;
+using Features.Inventory;
+using Tool;
 
 internal class MainController : BaseController
 {
@@ -51,8 +54,11 @@ internal class MainController : BaseController
                 _shedController?.Dispose();
                 _gameController?.Dispose();
                 break;
-            case GameState.Shed:
-                _shedController = new ShedController(_placeForUi, _profilePlayer);
+            case GameState.Shed:  
+                var shedRepository = CreateShedRepository();
+                var inventoryController = CreateInventoryController(_placeForUi);
+                var shedView = CreateShedView(_placeForUi);
+                _shedController = new ShedController(shedView, shedRepository, inventoryController, _profilePlayer);
                 _mainMenuController?.Dispose();
                 _settingsMenuController?.Dispose();
                 _gameController?.Dispose();
@@ -70,5 +76,30 @@ internal class MainController : BaseController
                 _shedController?.Dispose();
                 break;
         }
+    }
+
+    private IUpgradeHandlersRepository CreateShedRepository()
+    {
+        ResourcePath path = new ResourcePath("Configs/Shed/UpgradeItemConfigDataSource");
+        UpgradeItemConfig[] upgradeConfigs = ContentDataSourceLoader.LoadUpgradeItemConfigs(path);
+        var repository = new UpgradeHandlersRepository(upgradeConfigs);
+
+        return repository;
+    }
+
+    private IInventoryController CreateInventoryController(Transform placeForUi)
+    {
+        var inventoryController = new InventoryController(placeForUi, _profilePlayer.Inventory);
+
+        return inventoryController;
+    }
+
+    private GameObject CreateShedView(Transform placeForUi)
+    {
+        ResourcePath path = new ResourcePath("Prefabs/Shed/ShedView");
+        GameObject prefab = ResourcesLoader.LoadPrefab(path);
+        GameObject objectView = UnityEngine.Object.Instantiate(prefab, placeForUi, false);
+
+        return objectView;
     }
 }

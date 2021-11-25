@@ -13,14 +13,14 @@ namespace Game.Transport
 
         public float JumpHeight { get; set; }
 
-        public TransportModel(TransportType type,TransportConfig transportConfig)
+        public TransportModel(TransportConfig transportConfig)
         {
             _defaultSpeed = transportConfig.Speed;
             Speed = transportConfig.Speed;
             _defaultJumpHeight = transportConfig.JumpHeight;
              JumpHeight = transportConfig.JumpHeight;
 
-            Type = type;
+            Type = transportConfig.TransportType;
         }
 
         public void Restore()
