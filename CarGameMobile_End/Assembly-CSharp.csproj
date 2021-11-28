@@ -59,14 +59,17 @@
     <Compile Include="Assets\_Root\Scripts\Services\IAP\PurchaseRestorer.cs" />
     <Compile Include="Assets\_Root\Scripts\Repository.cs" />
     <Compile Include="Assets\_Root\Scripts\Features\AbilitySystem\Abilities\AbilityItemConfigDataSource.cs" />
+    <Compile Include="Assets\_Root\Scripts\Game\Boat\BoatView.cs" />
     <Compile Include="Assets\_Root\Scripts\Game\Transport\TransportConfig.cs" />
     <Compile Include="Assets\_Root\Scripts\Features\AbilitySystem\Abilities\AbilityType.cs" />
     <Compile Include="Assets\_Root\Scripts\Services\Analytics\AnalyticsManager.cs" />
     <Compile Include="Assets\_Root\Scripts\Ui\MainMenu\MainMenuController.cs" />
     <Compile Include="Assets\_Root\Scripts\Tool\ResourceManagement\ContentDataSourceLoader.cs" />
+    <Compile Include="Assets\_Battle\Scripts\DataType.cs" />
     <Compile Include="Assets\UpdateManager\Scripts\UpdateManager.cs" />
     <Compile Include="Assets\_Root\Scripts\Tool\Reactive\SubscriptionProperty.cs" />
     <Compile Include="Assets\_Root\Scripts\Ui\Trail.cs" />
+    <Compile Include="Assets\_Root\Scripts\Game\Boat\BoatController.cs" />
     <Compile Include="Assets\_Root\Scripts\Features\Shed\Upgrade\UpgradeItemConfig.cs" />
     <Compile Include="Assets\_Root\Scripts\Game\Transport\TransportController.cs" />
     <Compile Include="Assets\_Root\Scripts\Game\GameController.cs" />
@@ -96,7 +99,9 @@
     <Compile Include="Assets\_Root\Scripts\Game\InputLogic\InputGameController.cs" />
     <Compile Include="Assets\_Root\Scripts\Services\IAP\PurchaseValidator.cs" />
     <Compile Include="Assets\UpdateManager\Scripts\OverridableMonoBehaviour.cs" />
+    <Compile Include="Assets\_Battle\Scripts\Enemy.cs" />
     <Compile Include="Assets\_Root\Scripts\Features\Shed\Upgrade\UpgradeHandlersRepository.cs" />
+    <Compile Include="Assets\_Root\Scripts\Features\AbilitySystem\Abilities\JumpAbility.cs" />
     <Compile Include="Assets\_Root\Scripts\Features\Shed\Upgrade\UpgradeItemConfigDataSource.cs" />
     <Compile Include="Assets\_Root\Scripts\Features\Shed\Upgrade\JumpHeightUpgradeHandler.cs" />
     <Compile Include="Assets\_Root\Scripts\Features\Shed\Upgrade\SpeedUpgradeHandler.cs" />
@@ -139,6 +144,7 @@
     <Compile Include="Assets\_Root\Scripts\Features\Shed\ShedController.cs" />
     <Compile Include="Assets\_Root\Scripts\Ui\SettingsMenu\SettingsMenuView.cs" />
     <Compile Include="Assets\_Root\Scripts\Game\InputLogic\InputKeyboard.cs" />
+    <Compile Include="Assets\_Battle\Scripts\MainWindowObserver.cs" />
     <Compile Include="Assets\_Root\Scripts\Features\Inventory\Items\ItemConfigDataSource.cs" />
     <Compile Include="Assets\_Root\Scripts\Game\InputLogic\InputJoystickView.cs" />
     <Compile Include="Assets\_Root\Scripts\EntryPoint.cs" />
@@ -146,13 +152,13 @@
     <Compile Include="Assets\_Root\Scripts\Game\Transport\TransportType.cs" />
     <Compile Include="Assets\_Root\Scripts\Game\Transport\Car\CarController.cs" />
     <Compile Include="Assets\_Root\Scripts\Game\InputLogic\InputKey.cs" />
+    <Compile Include="Assets\_Battle\Scripts\DataPlayer.cs" />
     <Compile Include="Assets\_Root\Scripts\Services\Ads\UnityAds\InterstitialPlayer.cs" />
     <Compile Include="Assets\_Root\Scripts\Features\Inventory\Items\Item.cs" />
     <Compile Include="Assets\_Root\Scripts\Profile\GameState.cs" />
     <Compile Include="Assets\UpdateManager\Scripts\Utility\Singleton.cs" />
     <Compile Include="Assets\_Root\Scripts\Game\InputLogic\AxisManager.cs" />
     <Compile Include="Assets\_Root\Scripts\Ui\SettingsMenu\SettingsMenuController.cs" />
-    <Compile Include="Assets\_Root\Scripts\Features\AbilitySystem\Abilities\JumpAbility.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

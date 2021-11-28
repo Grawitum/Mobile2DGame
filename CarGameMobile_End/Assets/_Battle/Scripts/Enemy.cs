@@ -12,6 +12,7 @@ namespace BattleScripts
         private const float KMoney = 5f;
         private const float KPower = 1.5f;
         private const float MaxHealthPlayer = 20;
+        private const float ChangeValue = 1f; //ќчень странна€ формулировка у 1 задани€, но впринципе какое “« така€ и работа сказали попробовать изменить, ну попробовал... получилось))
 
         private readonly string _name;
 
@@ -50,7 +51,7 @@ namespace BattleScripts
             float moneyRatio = _moneyPlayer / KMoney;
             float powerRatio = _powerPlayer / KPower;
 
-            return (int)(moneyRatio + kHealth + powerRatio);
+            return (int)(moneyRatio + kHealth + powerRatio+ ChangeValue);
         }
 
         private int CalcKHealth() =>
