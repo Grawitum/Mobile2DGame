@@ -156,7 +156,7 @@ namespace Rewards
                 int countDay = i + 1;
                 bool isSelect = i == _dailyRewardView.CurrentSlotInActive;
 
-                _slots[i].SetData(reward, countDay, isSelect);
+                _slots[i].SetData(reward, countDay, isSelect,_dailyRewardView.RewardTimeType);
             }
         }
 
@@ -199,6 +199,8 @@ namespace Rewards
         private void ResetTimer()
         {
             PlayerPrefs.DeleteAll();
+            RefreshUi();
+            CurrencyView.Instance.RefreshText();
         }
     }
 }

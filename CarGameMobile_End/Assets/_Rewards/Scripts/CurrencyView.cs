@@ -48,7 +48,7 @@ namespace Rewards
         }
 
 
-        private void RefreshText()
+        public void RefreshText()
         {
             _currencyWood.SetData(Wood);
             _currentDiamond.SetData(Diamond);
