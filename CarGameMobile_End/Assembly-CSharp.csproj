@@ -53,13 +53,16 @@
     <UnityVersion>2020.3.14f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets\_Tween\Scripts\Examples\DOTween\TweenCubePath.cs" />
     <Compile Include="Assets\_Root\Scripts\Services\IAP\IAPService.cs" />
     <Compile Include="Assets\_Root\Scripts\Features\Inventory\Items\ItemConfig.cs" />
     <Compile Include="Assets\_Root\Scripts\Game\Transport\Boat\BoatController.cs" />
+    <Compile Include="Assets\_Tween\Scripts\Examples\Lerp\VectorLerpComponent.cs" />
     <Compile Include="Assets\_Root\Scripts\Services\IAP\PurchaseRestorer.cs" />
     <Compile Include="Assets\_Root\Scripts\Repository.cs" />
     <Compile Include="Assets\_Rewards\Scripts\Reward.cs" />
     <Compile Include="Assets\_Root\Scripts\Features\AbilitySystem\Abilities\AbilityItemConfigDataSource.cs" />
+    <Compile Include="Assets\_Tween\Scripts\Examples\DOTween\TweenCubeSequence.cs" />
     <Compile Include="Assets\_Root\Scripts\Game\Boat\BoatView.cs" />
     <Compile Include="Assets\_Root\Scripts\Game\Transport\TransportConfig.cs" />
     <Compile Include="Assets\_Root\Scripts\Features\AbilitySystem\Abilities\AbilityType.cs" />
@@ -88,11 +91,15 @@
     <Compile Include="Assets\_Rewards\Scripts\CurrencySlotView.cs" />
     <Compile Include="Assets\_Root\Scripts\Services\IAP\Settings\ProductLibrary.cs" />
     <Compile Include="Assets\_Root\Scripts\Game\Car\CarController.cs" />
+    <Compile Include="Assets\_Tween\Scripts\Examples\Lerp\MathfLerpComponent.cs" />
     <Compile Include="Assets\_Root\Scripts\Game\Transport\TransportModel.cs" />
     <Compile Include="Assets\_Rewards\Scripts\ContainerSlotRewardView.cs" />
     <Compile Include="Assets\_Root\Scripts\Tool\CustomText.cs" />
+    <Compile Include="Assets\_Tween\Scripts\MainWindowView.cs" />
     <Compile Include="Assets\_Root\Scripts\Game\TapeBackground\TapeBackgroundController.cs" />
+    <Compile Include="Assets\_Tween\Scripts\Examples\Extensions\GameObjectExtensions.cs" />
     <Compile Include="Assets\_Root\Scripts\Tool\ResourceManagement\ResourcesLoader.cs" />
+    <Compile Include="Assets\_Rewards\Scripts\RewardTimeType.cs" />
     <Compile Include="Assets\_Root\Scripts\Profile\ProfilePlayer.cs" />
     <Compile Include="Assets\UpdateManager\Example Scene\Scripts\ExampleUpdateManagerUpdate.cs" />
     <Compile Include="Assets\_Root\Scripts\Tool\DontDestroyOnLoadObject.cs" />
@@ -100,6 +107,7 @@
     <Compile Include="Assets\_Root\Scripts\Tool\ResourceManagement\ResourcePath.cs" />
     <Compile Include="Assets\_Root\Scripts\Game\TapeBackground\TapeBackgroundView.cs" />
     <Compile Include="Assets\_Root\Scripts\Features\Inventory\Items\ItemView.cs" />
+    <Compile Include="Assets\_Tween\Scripts\AnimationButtonType.cs" />
     <Compile Include="Assets\_Root\Scripts\Game\InputLogic\InputGameController.cs" />
     <Compile Include="Assets\_Root\Scripts\Services\IAP\PurchaseValidator.cs" />
     <Compile Include="Assets\UpdateManager\Scripts\OverridableMonoBehaviour.cs" />
@@ -115,6 +123,7 @@
     <Compile Include="Assets\_Root\Scripts\Services\Ads\UnityAds\UnityAdsService.cs" />
     <Compile Include="Assets\_Root\Scripts\Services\Ads\IAdsService.cs" />
     <Compile Include="Assets\_Root\Scripts\Game\Car\CarView.cs" />
+    <Compile Include="Assets\_Tween\Scripts\Examples\DOTween\TweenCubeMove.cs" />
     <Compile Include="Assets\UpdateManager\Example Scene\Scripts\Cloner.cs" />
     <Compile Include="Assets\_Root\Scripts\Features\AbilitySystem\Abilities\GunAbility.cs" />
     <Compile Include="Assets\_Root\Scripts\BaseController.cs" />
@@ -123,6 +132,7 @@
     <Compile Include="Assets\_Root\Scripts\Features\Inventory\InventoryModel.cs" />
     <Compile Include="Assets\_Root\Scripts\Services\ServicesSingleton.cs" />
     <Compile Include="Assets\_Root\Scripts\Features\Shed\Upgrade\UpgradeType.cs" />
+    <Compile Include="Assets\_Tween\Scripts\Examples\Extensions\GameObjectExtensionExample.cs" />
     <Compile Include="Assets\_Root\Scripts\Game\InputLogic\FloatInputJoystick.cs" />
     <Compile Include="Assets\_Root\Scripts\Services\Ads\UnityAds\Settings\UnityAdsSettings.cs" />
     <Compile Include="Assets\_Root\Scripts\Features\AbilitySystem\AbilitiesView.cs" />
@@ -130,6 +140,7 @@
     <Compile Include="Assets\UpdateManager\Example Scene\Scripts\ExampleUnityUpdate.cs" />
     <Compile Include="Assets\_Root\Scripts\Services\Ads\UnityAds\UnityAdsPlayer.cs" />
     <Compile Include="Assets\_Root\Scripts\Profile\SelectInputController.cs" />
+    <Compile Include="Assets\_Tween\Scripts\CustomButtonByInheritance.cs" />
     <Compile Include="Assets\_Root\Scripts\Features\Shed\Upgrade\StubUpgradeHandler.cs" />
     <Compile Include="Assets\_Rewards\Scripts\InstallView.cs" />
     <Compile Include="Assets\_Root\Scripts\Services\Analytics\UnityAnalytics\UnityAnalyticsService.cs" />
@@ -137,6 +148,7 @@
     <Compile Include="Assets\_Root\Scripts\Game\InputLogic\BaseInputView.cs" />
     <Compile Include="Assets\_Root\Scripts\Services\Ads\UnityAds\Settings\AdsPlayerSettings.cs" />
     <Compile Include="Assets\_Root\Scripts\Features\Inventory\InventoryView.cs" />
+    <Compile Include="Assets\_Tween\Scripts\Examples\DOTween\TweenCubeColor.cs" />
     <Compile Include="Assets\_Root\Scripts\Features\Inventory\InventoryController.cs" />
     <Compile Include="Assets\_Rewards\Scripts\DailyRewardView.cs" />
     <Compile Include="Assets\_Rewards\Scripts\RewardType.cs" />
@@ -163,11 +175,13 @@
     <Compile Include="Assets\_Battle\Scripts\DataPlayer.cs" />
     <Compile Include="Assets\_Root\Scripts\Services\Ads\UnityAds\InterstitialPlayer.cs" />
     <Compile Include="Assets\_Root\Scripts\Features\Inventory\Items\Item.cs" />
+    <Compile Include="Assets\_Tween\Scripts\CustomButtonByComposition.cs" />
     <Compile Include="Assets\_Root\Scripts\Profile\GameState.cs" />
     <Compile Include="Assets\UpdateManager\Scripts\Utility\Singleton.cs" />
     <Compile Include="Assets\_Root\Scripts\Game\InputLogic\AxisManager.cs" />
+    <Compile Include="Assets\_Tween\Scripts\PopupView.cs" />
     <Compile Include="Assets\_Root\Scripts\Ui\SettingsMenu\SettingsMenuController.cs" />
-    <Compile Include="Assets\_Rewards\Scripts\RewardTimeType.cs" />
+    <Compile Include="Assets\_Tween\Scripts\Testmen.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -406,6 +420,9 @@
     </Reference>
     <Reference Include="UnityEditor.UnityConnectModule">
       <HintPath>C:\Unity\2020.3.14f1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween">
+      <HintPath>Assets\Plugins\Demigiant\DOTween\DOTween.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@2.0.0\Runtime\Newtonsoft.Json.dll</HintPath>
