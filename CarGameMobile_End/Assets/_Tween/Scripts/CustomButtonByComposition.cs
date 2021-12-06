@@ -15,8 +15,20 @@ namespace _Tween.Scripts
         [Header("Settings")]
         [SerializeField] private AnimationButtonType _animationButtonType = AnimationButtonType.ChangePosition;
         [SerializeField] private Ease _curveEase = Ease.Linear;
-        [SerializeField] private float _duration = 0.6f;
+        [SerializeField] private float _duration = 5f;
         [SerializeField] private float _strength = 30f;
+
+        [ContextMenu("StartAnimation")]
+        void StartAnimation()
+        {
+            ActivateAnimation();
+        }
+
+        [ContextMenu("StopAnimation")]
+        void StopAnimation()
+        {
+            _rectTransform.DOKill();
+        }
 
 
         private void OnValidate() => InitComponents();

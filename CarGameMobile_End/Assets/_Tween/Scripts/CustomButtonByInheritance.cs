@@ -12,12 +12,28 @@ namespace _Tween.Scripts
         public static string CurveEaseName => nameof(_curveEase);
         public static string DurationName => nameof(_duration);
 
+        public static string NewParametr => nameof(_newParametr);
+
         [SerializeField] private RectTransform _rectTransform;
 
         [SerializeField] private AnimationButtonType _animationButtonType = AnimationButtonType.ChangePosition;
         [SerializeField] private Ease _curveEase = Ease.Linear;
         [SerializeField] private float _duration = 0.6f;
         [SerializeField] private float _strength = 30f;
+
+        [SerializeField] private string _newParametr = "123";
+
+        [ContextMenu("StartAnimation")]
+        void StartAnimation()
+        {
+            ActivateAnimation();
+        }
+
+        [ContextMenu("StopAnimation")]
+        void StopAnimation()
+        {
+            _rectTransform.DOKill();
+        }
 
 
         protected override void Awake()
