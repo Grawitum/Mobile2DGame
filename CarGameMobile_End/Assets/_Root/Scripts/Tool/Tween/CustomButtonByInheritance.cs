@@ -36,16 +36,9 @@ namespace _Tween.Scripts
 
         private void InitComponents()
         {
-            InitAudioSource();
-            InitRectTransform();
-        }
-
-        private void InitAudioSource() =>
             _audioSource ??= GetComponent<AudioSource>();
-
-        private void InitRectTransform() =>
             _rectTransform ??= GetComponent<RectTransform>();
-
+        }
 
         public override void OnPointerClick(PointerEventData eventData)
         {

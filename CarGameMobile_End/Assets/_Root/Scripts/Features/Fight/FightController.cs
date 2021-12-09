@@ -48,7 +48,7 @@ namespace Features.Fight
             DisposeDataPlayer(ref _heath);
             DisposeDataPlayer(ref _power);
             DisposeDataPlayer(ref _crime);
-
+            Pause(false);
             Unsubscribe();
         }
 
@@ -93,6 +93,10 @@ namespace Features.Fight
 
             _view.FightButton.onClick.AddListener(Fight);
             _view.EscapeButton.onClick.AddListener(Escape);
+
+            _view.OpenMenuButton.onClick.AddListener(OpenMenu) ;
+            _view.ContinueButton.onClick.AddListener(Continue);
+            _view.BackToMainMenuButton.onClick.AddListener(BackToMainMenu);
         }
 
         private void Unsubscribe()
@@ -111,6 +115,10 @@ namespace Features.Fight
 
             _view.FightButton.onClick.RemoveAllListeners();
             _view.EscapeButton.onClick.RemoveAllListeners();
+
+            _view.OpenMenuButton.onClick.RemoveAllListeners();
+            _view.ContinueButton.onClick.RemoveAllListeners();
+            _view.BackToMainMenuButton.onClick.RemoveAllListeners();
         }
 
 
@@ -209,5 +217,27 @@ namespace Features.Fight
         }
 
         private void Close() => _profilePlayer.CurrentState.Value = GameState.Game;
+
+        private void OpenMenu()
+        {
+            _view.MenuPanel.SetActive(true);
+            Pause(true);
+        }
+
+        private void Continue()
+        {
+            _view.MenuPanel.SetActive(false);
+            Pause(false);
+        }
+        private void BackToMainMenu()
+        {
+            _profilePlayer.CurrentState.Value = GameState.Start;
+        }
+
+        private void Pause(bool value)
+        {
+            if (value)  Time.timeScale = 0;
+            else Time.timeScale = 1;
+        }
     }
 }

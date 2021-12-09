@@ -33,6 +33,13 @@ namespace Features.Fight
 
         [field: Header("Other Buttons")]
         [field: SerializeField] public Button FightButton{ get; private set; }
-        [field: SerializeField] public Button EscapeButton{ get; private set; }
+        [field: SerializeField] public Button EscapeButton { get; private set; }
+
+        [field: Header("Menu Buttons")]
+        [field: SerializeField] public Button OpenMenuButton { get; private set; }
+        [field: SerializeField] public Button ContinueButton { get; private set; }
+        [field: SerializeField] public Button BackToMainMenuButton { get; private set; }
+
+        [field: SerializeField] public GameObject MenuPanel { get; private set; }
     }
 }

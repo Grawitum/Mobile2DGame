@@ -30,20 +30,10 @@ namespace _Tween.Scripts
 
         private void InitComponents()
         {
-            InitButton();
-            InitAudioSource();
-            InitRectTransform();
-        }
-
-        private void InitButton() =>
             _button ??= GetComponent<Button>();
-
-        private void InitAudioSource() =>
             _audioSource ??= GetComponent<AudioSource>();
-
-        private void InitRectTransform() =>
             _rectTransform ??= GetComponent<RectTransform>();
-
+        }
 
         private void OnButtonClick()
         {
