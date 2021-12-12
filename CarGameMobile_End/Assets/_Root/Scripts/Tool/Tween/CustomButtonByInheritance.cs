@@ -28,11 +28,11 @@ namespace _Tween.Scripts
             InitComponents();
         }
 
-        protected override void OnValidate()
-        {
-            base.OnValidate();
-            InitComponents();
-        }
+        //protected override void OnValidate()
+        //{
+        //    base.OnValidate();
+        //    InitComponents();
+        //}
 
         private void InitComponents()
         {
