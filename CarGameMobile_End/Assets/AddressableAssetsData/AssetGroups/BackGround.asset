@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: BackGround
+  m_EditorClassIdentifier: 
+  m_GroupName: BackGround
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 545b1a88880f72e49869f265c24df036
+  m_SerializeEntries:
+  - m_GUID: a68193e2aef6b43d4b4e05b967814d88
+    m_Address: Assets/_Root/Sprites/Rewards/UI_Graphic_Resource_Background.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - BackGround
+    m_MainAsset: {fileID: 2800000, guid: a68193e2aef6b43d4b4e05b967814d88, type: 3}
+    m_TargetAsset: {fileID: 2800000, guid: a68193e2aef6b43d4b4e05b967814d88, type: 3}
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: a1ce6dbf2ef6d5844ae1c56f9f499455, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 2d10ab5cfa5248f419af33aab1f141ae, type: 2}
+    - {fileID: 11400000, guid: 57afe8d938d5fd449865c7ced77d96df, type: 2}
