@@ -64,6 +64,7 @@
     <Compile Include="Assets\_Root\Scripts\Features\AbilitySystem\Abilities\AbilityType.cs" />
     <Compile Include="Assets\_Root\Scripts\Tool\Tween\Examples\Extensions\GameObjectExtensionExample.cs" />
     <Compile Include="Assets\_Root\Scripts\Services\Analytics\AnalyticsManager.cs" />
+    <Compile Include="Assets\_Root\Scripts\Notification\NotificationWindow.cs" />
     <Compile Include="Assets\_Root\Scripts\Tool\ResourceManagement\ContentDataSourceLoader.cs" />
     <Compile Include="Assets\_Root\Scripts\Tool\Tween\Examples\Lerp\MathfLerpComponent.cs" />
     <Compile Include="Assets\_Root\Scripts\Features\Fight\FightController.cs" />
@@ -106,8 +107,8 @@
     <Compile Include="Assets\_Root\Scripts\Tool\Tween\Examples\DOTween\TweenCubeSequence.cs" />
     <Compile Include="Assets\_Root\Scripts\Features\Inventory\Items\ItemView.cs" />
     <Compile Include="Assets\_Root\Scripts\Game\InputLogic\InputGameController.cs" />
-    <Compile Include="Assets\_Root\Scripts\Services\ServiceLocator.cs" />
     <Compile Include="Assets\_Root\Scripts\Services\IAP\PurchaseValidator.cs" />
+    <Compile Include="Assets\_Root\Scripts\Services\ServiceLocator.cs" />
     <Compile Include="Assets\_Root\Scripts\Features\Rewards\RewardType.cs" />
     <Compile Include="Assets\UpdateManager\Scripts\OverridableMonoBehaviour.cs" />
     <Compile Include="Assets\_Root\Scripts\Features\Shed\Upgrade\UpgradeHandlersRepository.cs" />
@@ -176,7 +177,7 @@
     <Compile Include="Assets\_Root\Scripts\Features\Rewards\Slot\ContainerSlotRewardView.cs" />
     <Compile Include="Assets\_Root\Scripts\Features\Rewards\RewardController.cs" />
     <Compile Include="Assets\_Root\Scripts\Ui\SettingsMenu\SettingsMenuController.cs" />
-    <Compile Include="Assets\_Root\Scripts\Notification\NotificationWindow.cs" />
+    <Compile Include="Assets\_Root\Scripts\LocalizationWindow\LocalizationWindow.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -776,6 +777,9 @@
     <Reference Include="Unity.VSCode.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Notifications">
+      <HintPath>Library\ScriptAssemblies\Unity.Notifications.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.Purchasing">
       <HintPath>Library\ScriptAssemblies\UnityEngine.Purchasing.dll</HintPath>
     </Reference>
@@ -818,6 +822,9 @@
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Notifications.iOS">
+      <HintPath>Library\ScriptAssemblies\Unity.Notifications.iOS.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.Purchasing.SecurityCore">
       <HintPath>Library\ScriptAssemblies\UnityEngine.Purchasing.SecurityCore.dll</HintPath>
     </Reference>
@@ -848,14 +855,14 @@
     <Reference Include="UnityEngine.Advertisements.Editor">
       <HintPath>Library\ScriptAssemblies\UnityEngine.Advertisements.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Notifications">
-      <HintPath>Library\ScriptAssemblies\Unity.Notifications.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Notifications.iOS">
-      <HintPath>Library\ScriptAssemblies\Unity.Notifications.iOS.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Notifications.Android">
       <HintPath>Library\ScriptAssemblies\Unity.Notifications.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Localization.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Localization.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Localization">
+      <HintPath>Library\ScriptAssemblies\Unity.Localization.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
